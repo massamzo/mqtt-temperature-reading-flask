@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet'> 
+        <link rel="stylesheet" href="/static/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script data-require="d3@4.13.0" data-semver="4.13.0" src="//cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.js"></script>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="/static/script1.js"></script>
+    </head>
+    <body>
+        
+        <div id="main">
+            <div id="classes" class="data_viewers">
+                <div id="tabs">
+                    <span class="tab" title="Andamento storico" >Andamento</span>
+                    <span class="tab" title="Temperature in tempo reale">Live</span>
+                    <span class="tab" title="Modificare tempo di risposta">Admin</span>
+                </div>
+                <div id="searchbox">
+                    
+                    <input type="text" placeholder="Cerca aula" id="search">
+                    <button id="search-img"><i class="fa fa-search"></i></button>
+                    
+                </div>
+
+                <div id="list">
+
+                    {% for i in classi %}
+                    <div class="li">
+                        <input class="checkbox" type="checkbox">
+                        <span>{{i}}</span>
+                         <hr>
+                    </div>
+                    {%endfor%}
+                
+                   
+                    
+                </div>
+
+                
+                
+            </div>
+            <div id="temp_data" class="data_viewers">
+                
+               
+                <table id="graph-table">
+                    <tr id='temp-tr'>
+                        <td id="graph-td">
+                            
+                        </td>
+                        
+                    </tr>
+                    <tr id='hum-tr'>
+                        <td id="hum-td">
+                            
+                        </td>
+                        
+                    </tr>
+                </table>
+                
+            </div>
+        </div>
+
+        <div id="period">
+            <button id="close">X</button>
+            <h3>Seleziona il periodo</h3>
+            <input type="date" id="period-date"><br>
+            
+        </div>
+        
+    </body>
+</html>
+
+<!--
+    <div id="main">
+        {% for i in nodi %}
+            <div id="{{i}}" class="temp">
+                <h2>{{i}}</h2>
+                <h3>24.7</h3>
+            </div>
+        {% endfor %}
+-->
